@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Tableau Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tableau Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;  /* Prevent scrollbars from appearing */
+        }
+        .tableauPlaceholder {
+            width: 100%;       /* Use full width to maximize responsiveness */
+            height: 100%;      /* Use full height to maximize responsiveness */
+            position: relative;
+            display: flex;
+            justify-content: center; /* Center the dashboard horizontally */
+            align-items: center;     /* Center the dashboard vertically */
+        }
+    </style>
 </head>
 <body>
-<div class='tableauPlaceholder' id='viz1715355968865' style='position: relative'>
+<div class='tableauPlaceholder' id='viz1715355968865'>
     <noscript><a href='#'><img alt='EPA Standards ' src='https://public.tableau.com/static/images/Wa/WaterQualityInteractiveDashboard/EPAStandardsDashboard/1_rss.png' style='border: none' /></a></noscript>
     <object class='tableauViz'  style='display:none;'>
         <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
@@ -28,11 +45,11 @@
     var divElement = document.getElementById('viz1715355968865');
     var vizElement = divElement.getElementsByTagName('object')[0];
     if ( divElement.offsetWidth > 800 ) {
-        vizElement.style.width='1000px';vizElement.style.height='827px';
-    } else if ( divElement.offsetWidth > 500 ) {
-        vizElement.style.width='1000px';vizElement.style.height='827px';
+        vizElement.style.minWidth='1000px';
+        vizElement.style.minHeight='800px';
     } else {
-        vizElement.style.width='100%';vizElement.style.height='727px';
+        vizElement.style.width='100%'; // Use percentage for flexibility
+        vizElement.style.height='800px'; // Fixed height as per dashboard design
     }
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
